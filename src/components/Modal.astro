@@ -1,0 +1,147 @@
+---
+// Modal.astro
+export interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<div 
+    id={id}
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70"
+>
+    <!-- Modal Container -->
+    <div 
+        class="relative mx-4 w-full max-w-3xl transform rounded-2xl bg-bg-primary p-12 shadow-xl transition-all"
+    >
+        <div 
+            class="pointer-events-none bg-gradient-to-b from-[#2E5EF4]/0 via-[#2E5EF4] to-[#2E5EF4]/0 absolute w-40 lg:w-50 lg:blur-[60px] h-full left-1/2 transform -translate-x-1/2 blur-2xl opacity-5"
+        ></div>
+
+        <!-- Close Button -->
+        <button
+            type="button"
+            class="absolute cursor-pointer right-6 top-6 z-10 p-2 rounded-full bg-bg-tertiary"
+            data-close-modal={id}
+        >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 18L12 12M12 12L18 6M12 12L6 6M12 12L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <!-- Modal Content -->
+        <div class="relative z-10">
+            <div class="mb-5 w-full text-center px-6">
+                <span class="text-blue-700 font-medium text-sm mb-2">Sobre mí</span>
+                <h2 class="text-4xl font-medium text-primary tracking-tighter">
+                    Te contaré un poco de mí historia
+                </h2>
+            </div>
+            <div class="mb-7 leading-7 space-y-4 text-secondary">
+                <p>
+                    Soy Víctor Manuel, tengo 20 años y <span class="font-medium">soy originario de Colombia</span>, un 
+                    país lleno de belleza natural y una gran riqueza cultural. Hace cinco años 
+                    <span class="font-medium">me mudé a Barcelona</span> junto a mi madre, una ciudad que desde entonces 
+                    se ha convertido en mi hogar y escenario de mi crecimiento personal y profesional. 
+                    <span class="font-medium underline underline-offset-3" style="text-decoration-thickness: 1.5px;">Per cert m'agrada molt Barcelona.</span>
+                </p>
+                <p>
+                    A lo largo de este tiempo, he vivido experiencias que me han aportado mucho. 
+                    <span class="font-medium">Estudié catalán</span>, lo 
+                    que me ha permitido integrarme mejor y conectar mejor con la cultura local. También 
+                    <span class="font-medium">estudié interpretación</span>, algo 
+                    que siempre me había llamado la atención y que finalmente me animé a hacer.
+                </p>
+                <p>
+                    Desde pequeño he sentido una fuerte <span class="font-medium">atracción por la 
+                    tecnología</span>, y <span class="font-medium">la programación</span>, en particular, siempre 
+                    me generó mucha curiosidad por lo que decidí hace dos años empezar a formarme en este campo, y desde 
+                    entonces no he dejado de aprender y trabajar en proyectos que me permitan seguir creciendo como desarrollador.
+                </p>
+                <p>
+                    <span class="font-medium">Lo que más me gusta de programar es que une lógica, creatividad y la posibilidad de construir soluciones 
+                    útiles a problemas reales</span>. Me gusta pensar en cada proyecto como una oportunidad para aportar valor, con 
+                    ideas claras, funcionales y bien pensadas.
+                </p>
+                <p>
+                    Actualmente sigo formándome, con entusiasmo y muchas ganas de seguir creciendo, desarrollando proyectos 
+                    y convirtiendo ideas en soluciones reales.
+                </p>
+            </div>
+            <div class="w-full text-center">
+                <span class="text-secondary tracking-tight font-medium">¡Muchas gracias por tomarte el tiempo de leer un poco de mí historia!</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script define:vars={{ id }}>
+  class ModalManager {
+    constructor(modalId) {
+      this.modalId = modalId;
+      this.modal = document.getElementById(modalId);
+      this.init();
+    }
+
+    init() {
+      if (!this.modal) return;
+
+      document.addEventListener('click', (e) => {
+        const trigger = e.target.closest(`[data-open-modal="${this.modalId}"]`);
+        if (trigger) {
+          e.preventDefault();
+          this.open();
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        const closeButton = e.target.closest(`[data-close-modal="${this.modalId}"]`);
+        if (closeButton) {
+          e.preventDefault();
+          this.close();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.isOpen()) {
+          this.close();
+        }
+      });
+
+      this.modal.addEventListener('click', (e) => {
+        if (e.target === this.modal) {
+          this.close();
+        }
+      });
+    }
+
+    open() {
+      this.modal.classList.remove('hidden');
+      this.modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      
+      // Focus trap
+      const focusableElements = this.modal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusableElements.length > 0) {
+        focusableElements[0].focus();
+      }
+    }
+
+    close() {
+      this.modal.classList.add('hidden');
+      this.modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    isOpen() {
+      return this.modal.classList.contains('flex');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new ModalManager(id);
+  });
+</script>

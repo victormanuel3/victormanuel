@@ -1,0 +1,37 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+---
+
+<section id="projects">
+    <div class="w-full text-center mt-20">
+        <div class="inline-flex gap-2 items-center">
+            <span class="font-mono text-secondary font-medium text-sm">Proyectos</span>
+            <span class="h-4 w-2 animate-[kicker-caret_2s_infinite] fill-mode-both bg-secondary/40 kicker-caret"></span>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <div>
+            <h1 class="text-primary text-6xl tracking-tighter text-balance font-medium max-w-3xl text-center leading-16">Mis proyectos más <br> recientes</h1>
+        </div>
+    </div>
+    <div>
+        <ul class="max-w-6xl mx-auto mt-14 mb-16 px-6 sm:px-6 lg:px-8 flex flex-col gap-8">
+            {projects.map((project) => (
+                <ProjectCard
+                    id={project.id}
+                    logo={project.logo}
+                    title={project.title} 
+                    start_year={project.start_year}
+                    end_year={project.end_year}
+                    description={project.description}
+                    preview={project.preview}
+                    link={project.link}
+                    technologies={project.technologies}
+                    image={project.image}
+                    disciplines={project.disciplines}
+                />
+            ))}
+        </ul>
+    </div>
+</section>

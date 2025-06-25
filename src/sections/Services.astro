@@ -1,0 +1,216 @@
+---
+import Pixeler from "../components/Pixeler.astro";
+const code = `
+<svg width="84" height="58" viewBox="0 0 84 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M48.8252 1.53223L54.8594 3.80273L55.3262 3.97852L55.1514 4.44531L35.8193 56.1748L35.6436 56.6445L35.1748 56.4678L29.1406 54.1973L28.6738 54.0215L28.8486 53.5547L48.1807 1.8252L48.3564 1.35547L48.8252 1.53223ZM20.7432 10.1953L25.2998 14.7676L25.6514 15.1211L25.2998 15.4736L11.8193 29L25.2998 42.5264L25.6514 42.8789L25.2998 43.2324L20.7432 47.8047L20.3887 48.1602L20.0342 47.8047L1.64551 29.3535L1.29395 29L1.64551 28.6475L20.0342 10.1953L20.3887 9.83984L20.7432 10.1953ZM63.9648 10.1953L82.3545 28.6465L82.7061 29L82.3545 29.3525L63.9648 47.8047L63.6113 48.1592L63.2568 47.8047L58.7002 43.2324L58.3486 42.8789L58.7002 42.5264L72.1797 28.999L58.7002 15.4736L58.3486 15.1201L58.7002 14.7676L63.2568 10.1953L63.6113 9.83984L63.9648 10.1953Z" fill="white" stroke="white"/>
+</svg>
+`;
+
+const uiux = `
+<svg width="72" height="70" viewBox="0 0 72 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M62.0585 46.1467L59.2487 32.438L29.1092 26.1699L39.214 36.2749C41.3283 34.6128 44.1208 35.0286 46.0676 36.9814C48.1726 39.0928 48.1726 42.5145 46.0676 44.626C43.9626 46.7374 40.5515 46.7374 38.4465 44.626C36.4997 42.6732 36.1514 39.8013 37.8085 37.6804L27.7036 27.5758L33.917 57.8477L47.5837 60.6661L62.06 46.1452L62.0585 46.1467Z" fill="white"/>
+    <path d="M63.3767 47.4663L49.0632 61.8238C48.4665 62.4224 48.4665 63.3949 49.0632 63.9934C49.6599 64.592 50.6278 64.592 51.2261 63.9934L65.5396 49.6359C66.1363 49.0373 66.1363 48.0664 65.5396 47.4663C64.9429 46.8677 63.975 46.8677 63.3767 47.4663Z" fill="white"/>
+    <path d="M67.2393 51.0305L52.6163 65.6986L56.7349 69.8299L71.3579 55.1619L67.2393 51.0305Z" fill="white"/>
+    <path d="M21.6958 13.4707L15.3293 19.8202L21.6958 26.1698L28.062 19.8202L21.6958 13.4707Z" fill="white"/>
+    <path d="M50.799 2.58594C40.395 5.89968 29.9515 12.0276 20.8892 20.7502C12.3122 29.0085 6.14996 38.4587 2.59668 47.9398" stroke="white" stroke-width="4" stroke-linecap="square" stroke-linejoin="round"/>
+</svg>
+`;
+
+---
+
+<section id="services">
+    <div class="w-full text-center">
+        <div class="inline-flex gap-2 items-center">
+            <span class="font-mono text-secondary font-medium text-sm">Servicios</span>
+            <span class="h-4 w-2 animate-[kicker-caret_2s_infinite] fill-mode-both bg-secondary/40 kicker-caret"></span>
+        </div>
+    </div>
+    <div class="w-full">
+        <h1 class="mx-auto max-w-3xl text-center text-6xl font-medium tracking-tighter text-primary">Cómo puedo aportar a tu proyecto</h1>
+    </div>
+    <div class="text-center text-base max-w-3xl text-balance  mt-4 mx-auto px-6 lg:px-0">
+        <p class="text-secondary">
+            Cada proyecto es distinto, por eso creo soluciones que se adaptan al tuyo.
+        </p>
+    </div>
+
+    <div class="max-w-4xl mt-10 mx-auto">
+        <div class="flex flex-col lg:flex-row gap-4 lg:gap-10">
+            <!-- Primer apartado -->
+            <div class="text-black p-6 rounded-lg flex-1 flex flex-col items-center text-balance text-center">
+                <div class="relative h-33 w-33 bg-linear-to-b from-teal-200 to-teal-500 rounded-lg p-3 flex items-end">
+                    <span class="font-medium leading-3.5 text-white" style="text-shadow: 0.6px 0.6px 0px rgba(2, 47, 46, 0.2);">
+                        01
+                    </span>
+                    <div class="absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                        <Pixeler vector="code" pixelColor="#0B4F4A" />
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <h3 class="text-2xl text-primary font-medium tracking-tighter">Desarrollo técnico</h3>
+                    <p class="mt-4 leading-7 text-secondary">
+                        Construyo soluciones web sólidas, eficientes y escalables. Me enfoco en la calidad del código, el rendimiento y la adaptabilidad, desarrollando aplicaciones intuitivas y funcionales que se alinean con los objetivos del negocio y ofrecen una experiencia fluida para los usuarios.
+                    </p>
+                </div>
+                <div class="flex gap-4 font-mono text-sm mt-6 group select-none cursor-pointer">
+                    <div class="flex flex-col select-none">
+                        <span class="text-secondary/50">1</span>
+                        <span class="font-medium text-secondary">2</span>
+                        <span class="text-secondary/50">3</span>
+                    </div>
+                    <div class="text-left">
+                        <span class="w-fit text-secondary/50">&lt;script&gt;</span>
+                        <div class="w-fit pl-6 flex">
+                            <span class="text-secondary font-medium">function </span>
+                            <span class="ml-2 text-secondary/80 delay-100 transition-colors group-hover:text-blue-700 group-hover:font-medium duration-300">
+                                construyamos
+                            </span>
+                            <span class="font-medium text-secondary">(ux) &#123;&#125;</span>
+                        </div>
+                        <span class="w-fit text-secondary/50">&lt;/script&gt;</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hidden lg:block w-px bg-border-primary self-stretch py-4"></div>
+            
+            <!-- Segundo apartado -->
+            <div class="text-black p-6 rounded-lg flex-1 flex flex-col items-center text-balance text-center">
+                <div class="relative h-33 w-33 bg-linear-to-b from-blue-300 to-blue-500 rounded-lg p-3 flex items-end">
+                    <span class="font-medium leading-3.5 text-white" style="text-shadow: 0.6px 0.6px 0px rgba(22, 37, 85, 0.2);">
+                        02
+                    </span>
+                    <div class="absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                        <Pixeler vector="uiux" pixelColor="#1C398E" />
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <div class="mb-6">
+                        <h3 class="text-2xl text-primary font-medium tracking-tighter">Diseño UI/UX</h3>
+                        <p class="mt-4 leading-7 text-secondary">
+                            Diseño experiencias digitales centradas en las personas, con una interfaz intuitiva, estética y alineada a la identidad del proyecto. Cada detalle está pensado para conectar con el usuario y facilitar su interacción de forma clara y fluida.
+                        </p>
+                    </div>
+                    <div class="w-full flex justify-center">
+                        <div class="flex mx-8">
+                            <div class="px-3 group py-3 text-sm flex max-w-fit text-secondary flex-col gap-3 text-center bg-bg-primary rounded-2xl" style="box-shadow: inset 0px 2px 3px rgba(15, 23, 43, 0.0784314), inset 0px 1px 1px rgba(15, 23, 43, 0.160784);">
+                                <span id="phrase" class="delay-100 group-hover:text-blue-700 transition-all duration-100">“Una interfaz es como un chiste: si tienes que explicarlo, no es bueno.”</span>
+                                <span class="text-xs">— Martin LeBlanc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div 
+                    class="p-2.5 rounded-xl bg-bg-secondary flex gap-2 mt-6 items-center shadow-sm"
+                >
+                    <button 
+                        class="group size-5 cursor-pointer flex justify-center items-center"
+                        data-selected="false"
+                        data-style="font-medium"
+                        onclick="handleButtonClick(this)"
+                    >
+                        <svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="group-hover:stroke-[1.7px] transition-all duration-100 group-data-[selected=true]:stroke-[1.7px]" d="M4.06592 8.5H9.38533C10.9501 8.5 12.2186 7.23147 12.2186 5.66666V5.48959C12.2186 3.92478 10.9501 2.65625 9.38533 2.65625H5.12842C4.54162 2.65625 4.06592 3.13195 4.06592 3.71875V8.5ZM4.06592 8.5V13.2812C4.06592 13.8681 4.54162 14.3438 5.12842 14.3438H8.85408M9.20842 14.3438H10.0938C11.6587 14.3438 12.9272 13.0752 12.9272 11.5104V11.3334C12.9272 9.76853 11.6587 8.5 10.0938 8.5H9.20842" stroke="#484D5C" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <button 
+                        class="group size-5 cursor-pointer flex justify-center items-center"
+                        data-selected="false"
+                        data-style="italic"
+                        onclick="handleButtonClick(this)"
+                    >
+                        <svg width="16" height="15" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="group-hover:stroke-[1.7px] transition-all duration-100 group-data-[selected=true]:stroke-[1.7px]" d="M6.75001 3.09082H10.3125M10.3125 3.09082H13.875M10.3125 3.09082L6.5625 14.7783M6.5625 14.7783H3M6.5625 14.7783H10.1326" stroke="#484D5C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <button 
+                        class="group size-5 cursor-pointer transition-all flex justify-center items-center duration-200"
+                        data-selected="false"
+                        data-style="underline"
+                        onclick="handleButtonClick(this)"
+                    >
+                        <svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="group-hover:stroke-[1.7px] transition-all duration-100 group-data-[selected=true]:stroke-[1.7px]" d="M4.073 14.6979H12.9271M4.073 2.65625V8.5C4.073 10.945 6.05507 12.9271 8.50007 12.9271C10.945 12.9271 12.9271 10.945 12.9271 8.5V2.65625" stroke="#484D5C" stroke-width="1.2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-6xl mx-auto mb-16 px-8 sm:px-14 lg:px-20 mt-12">
+        <div class="relative p-8 bg-bg-secondary border text-secondary border-border-primary rounded-3xl">
+            <div class="mb-7">
+                <div class="w-full">
+                    <h2 class="mx-auto max-w-3xl text-center text-4xl font-medium tracking-tighter text-primary">Mí aporte a tu empresa</h2>
+                </div>
+                <div class="text-center leading-7 text-base max-w-3xl text-balance mt-4 mx-auto px-6 lg:px-0">
+                    <p>Creo en el compromiso real con cada proyecto. No solo me enfoco en entregar resultados, sino en aportar soluciones que sumen de verdad. Trabajo con responsabilidad, comunicación clara y siempre con ganas de aprender y crecer junto a quien confía en mí. <span class="font-medium">Si buscas a alguien que entienda tu proyecto como propio, podemos formar un gran equipo.</span></p>
+                </div>
+            </div>
+            <ul class="flex gap-4 justify-center mb-6 flex-wrap">
+                <li class="p-[7px] bg-[#EDEFF3] border-[1px] border-border-secundary/32 w-fit h-fit rounded-xl">
+                    <div class="px-4 py-2 bg-bg-secondary rounded-lg" style="box-shadow: inset 0px 2px 1.5px rgba(152, 158, 179, 0.32), inset 0px 0px 0px 2px rgba(152, 158, 179, 0.24);">
+                        <span class="text-sm text-blue-700 font-medium">Iniciativa</span> 
+                    </div>
+                </li>
+                <li class="p-[7px] bg-[#EDEFF3] border-[1px] border-border-secundary/32 w-fit h-fit rounded-xl">
+                    <div class="px-4 py-2 bg-bg-secondary rounded-lg" style="box-shadow: inset 0px 2px 1.5px rgba(152, 158, 179, 0.32), inset 0px 0px 0px 2px rgba(152, 158, 179, 0.24);">
+                        <span class="text-sm text-blue-700 font-medium">Disciplina</span> 
+                    </div>
+                </li>
+                <li class="p-[7px] bg-[#EDEFF3] border-[1px] border-border-secundary/32 w-fit h-fit rounded-xl">
+                    <div class="px-4 py-2 bg-bg-secondary rounded-lg" style="box-shadow: inset 0px 2px 1.5px rgba(152, 158, 179, 0.32), inset 0px 0px 0px 2px rgba(152, 158, 179, 0.24);">
+                        <span class="text-sm text-blue-700 font-medium">Proactividad</span> 
+                    </div>
+                </li>
+                <li class="p-[7px] bg-[#EDEFF3] border-[1px] border-border-secundary/32 w-fit h-fit rounded-xl">
+                    <div class="px-4 py-2 bg-bg-secondary rounded-lg" style="box-shadow: inset 0px 2px 1.5px rgba(152, 158, 179, 0.32), inset 0px 0px 0px 2px rgba(152, 158, 179, 0.24);">
+                        <span class="text-sm text-blue-700 font-medium">Creatividad</span> 
+                    </div>
+                </li>
+                <li class="p-[7px] bg-[#EDEFF3] border-[1px] border-border-secundary/32 w-fit h-fit rounded-xl">
+                    <div class="px-4 py-2 bg-bg-secondary rounded-lg" style="box-shadow: inset 0px 2px 1.5px rgba(152, 158, 179, 0.32), inset 0px 0px 0px 2px rgba(152, 158, 179, 0.24);">
+                        <span class="text-sm text-blue-700 font-medium">Trabajo en equipo</span> 
+                    </div>
+                </li>
+                <li class="p-[7px] bg-[#EDEFF3] border-[1px] border-border-secundary/32 w-fit h-fit rounded-xl">
+                    <div class="px-4 py-2 bg-bg-secondary rounded-lg" style="box-shadow: inset 0px 2px 1.5px rgba(152, 158, 179, 0.32), inset 0px 0px 0px 2px rgba(152, 158, 179, 0.24);">
+                        <span class="text-sm text-blue-700 font-medium">Resolutivo</span> 
+                    </div>
+                </li>
+                <li class="p-[7px] bg-[#EDEFF3] border-[1px] border-border-secundary/32 w-fit h-fit rounded-xl">
+                    <div class="px-4 py-2 bg-bg-secondary rounded-lg" style="box-shadow: inset 0px 2px 1.5px rgba(152, 158, 179, 0.32), inset 0px 0px 0px 2px rgba(152, 158, 179, 0.24);">
+                        <span class="text-sm text-blue-700 font-medium">Esfuerzo</span> 
+                    </div>
+                </li>
+                <li class="p-[7px] bg-[#EDEFF3] border-[1px] border-border-secundary/32 w-fit h-fit rounded-xl">
+                    <div class="px-4 py-2 bg-bg-secondary rounded-lg" style="box-shadow: inset 0px 2px 1.5px rgba(152, 158, 179, 0.32), inset 0px 0px 0px 2px rgba(152, 158, 179, 0.24);">
+                        <span class="text-sm text-blue-700 font-medium">Adaptabilidad</span> 
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+    function handleButtonClick(button: HTMLButtonElement): void {
+        const isCurrentlySelected = button.dataset.selected === 'true';
+        const styleClass = button.dataset.style as string;
+        const phraseElement = document.getElementById('phrase') as HTMLElement;
+        
+        if (!phraseElement || !styleClass) return;
+        
+        if (isCurrentlySelected) {
+            button.dataset.selected = 'false';
+            phraseElement.classList.remove(styleClass);
+        } else {
+            button.dataset.selected = 'true';
+            phraseElement.classList.add(styleClass);
+        }
+    }
+    
+    (window as any).handleButtonClick = handleButtonClick;
+</script>

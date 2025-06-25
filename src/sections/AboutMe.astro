@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets'
+import photo from '@assets/images/VictorManuel/victormanuel_photo_1.jpg'
+import Interests from '../components/Interests.astro'
+import Modal from '../components/Modal.astro';
+---
+<section class="mt-20" id="about_me">
+    <div class="mx-auto px-6 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10">
+            <div class="lg:col-span-9">
+                <div class="inline-flex gap-2 items-center">
+                    <span class="font-mono text-secondary font-medium text-sm">Sobre mí</span>
+                    <div class="h-4 w-2 animate-[kicker-caret_2s_infinite] fill-mode-both bg-secondary/40 kicker-caret"></div>
+                </div>
+                <h2 class="font-medium text-primary tracking-tighter text-4xl mb-5">Te contaré un poco de mí historia</h2>
+                <div class="mb-1">
+                    <p class="leading-7 text-base text-secondary">
+                        Soy Víctor Manuel, tengo 20 años y <span class="font-medium">soy originario de Colombia</span>, un país lleno de 
+                        belleza natural y una gran riqueza cultural. Hace cinco años <span class="font-medium">me mudé a Barcelona</span> 
+                        junto a mi madre, una ciudad que desde entonces se ha convertido en mi hogar y 
+                        escenario de mi crecimiento personal y profesional. <span class="font-medium underline underline-offset-3" style="text-decoration-thickness: 1.5px;">Per cert m'agrada molt Barcelona.</span>
+                    </p>
+                    <p class="leading-7 text-base text-secondary mt-4">
+                        A lo largo de este tiempo, he vivido experiencias que me han aportado mucho. <span class="font-medium">Estudié 
+                        catalán</span>, lo que me ha permitido integrarme mejor y conectar mejor con la cultura 
+                        local. También <span class="font-medium">estudié interpretación</span>, algo que siempre me había llamado la atención 
+                        y que finalmente me animé a hacer.
+                    </p>
+                </div>
+                <a 
+                    class="text-blue-700 transition-all duration-200 hover:gap-3 font-medium flex gap-2 items-center cursor-pointer w-fit"
+                    data-open-modal="about-me"
+                >
+                    <span>Continuar leyendo</span>
+                    <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L4 4L1 7" stroke="#1447E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="lg:col-span-3 flex flex-col gap-4 items-center justify-center">
+                <div class="transform rotate-3 text-center group">
+                    <div class="text-sm flex justify-center mb-1 text-secondary/80">
+                        <span class="pr-0.5 group-hover:text-blue-700 duration-300">Seh, este soy yo. ;)</span>
+                    </div>
+                    <div class="p-[7px] bg-[#EDEFF3] border-[1px] border-border-secundary/32 w-fit rounded-3xl">
+                        <div class="p-2 bg-bg-secondary rounded-2xl" style="box-shadow: inset 0px 2px 1.5px rgba(152, 158, 179, 0.32), inset 0px 0px 0px 2px rgba(152, 158, 179, 0.24);">
+                            <div class="w-50 h-55 select-none touch-none cursor-grab">
+                                <div class="rounded-xl overflow-hidden w-full h-full shadow-sm">
+                                    <Image
+                                        class="relative object-cover" 
+                                        src={photo} 
+                                        alt="photo"
+                                        style="will-change: auto;"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button 
+                    class="gradient-border relative isolate text-sm py-2.5 px-4 rounded-full bg-bg-tertiary text-white 
+                        flex justify-center items-center gap-2 after:-z-10 after:absolute after:bg-gradient-to-b 
+                        after:from-white after:to-white/0 after:opacity-16 after:inset-0 after:pointer-events-none after:rounded-full"
+                    style="box-shadow: 0px 1px 2px rgba(37, 17, 79, 0.1), 0px 0px 0px 1px #313133;"
+                >
+                    <div class="flex h-full z-100 gap-2">
+                        <a class="flex gap-1 cursor-pointer" href="https://github.com/victormanuel3">
+                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.33333 12.9994C7.78944 13.5822 7.49099 14.3522 7.5 15.1494L7.5 17.9994M11.6667 12.9994C12.2106 13.5822 12.509 14.3522 12.5 15.1494L12.5 17.9994M7.5 16.3744C6.75458 16.6713 5.9461 16.7745 5.15 16.6744C3.88333 16.2411 4.21667 15.0911 3.56667 14.6161C3.25431 14.3927 2.88364 14.2653 2.5 14.2494M15.8333 8.62439C15.8333 11.1244 14.2083 12.9994 10 12.9994C5.79167 12.9994 4.16667 11.1244 4.16667 8.62439C4.14608 7.75703 4.34077 6.8981 4.73333 6.12439C4.45 4.89939 4.55833 3.39106 5.16667 3.09106C5.775 2.79106 7.05833 3.34106 8.11667 4.04939C8.73831 3.93846 9.36854 3.88268 10 3.88272C10.631 3.87718 11.2612 3.92738 11.8833 4.03272C12.9417 3.32439 14.2833 2.79939 14.8333 3.07439C15.3833 3.34939 15.55 4.88272 15.2667 6.10772C15.6619 6.88643 15.8567 7.75143 15.8333 8.62439Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <div class="h-full py-[0.4px]">
+                            <div class="h-full border-1 border-white/20"></div>
+                        </div>
+                        <a class="flex gap-1 cursor-pointer" href="https://www.linkedin.com/in/victor-manuellu/">
+                            <svg  width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.1667 14.6667L14.1667 11.75C14.1667 10.5994 13.2339 9.66667 12.0833 9.66667C10.9327 9.66667 10 10.5994 10 11.75M10 11.75L10 14.6667M10 11.75L10 9.25M6.66667 9.25L6.66667 14.6667M6.66667 6.33333L6.66667 6.34167M9.16667 18L10.8333 18C13.1669 18 14.3337 18 15.225 17.5459C16.009 17.1464 16.6464 16.509 17.0459 15.725C17.5 14.8337 17.5 13.6669 17.5 11.3333L17.5 9.66667C17.5 7.33311 17.5 6.16634 17.0459 5.27504C16.6464 4.49103 16.009 3.85361 15.225 3.45414C14.3337 3 13.1669 3 10.8333 3L9.16667 3C6.83311 3 5.66634 3 4.77504 3.45414C3.99103 3.85361 3.35361 4.49103 2.95414 5.27504C2.5 6.16634 2.5 7.33311 2.5 9.66667L2.5 11.3333C2.5 13.6669 2.5 14.8337 2.95414 15.725C3.35361 16.509 3.99103 17.1464 4.77504 17.5459C5.66634 18 6.83311 18 9.16667 18Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <Interests/>
+</section>
+<Modal id="about-me" />

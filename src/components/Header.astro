@@ -1,0 +1,179 @@
+---
+
+---
+<nav 
+    class="w-fit whitespace-nowrap backdrop-blur-lg space-x-8 py-4 pr-2 pl-6 fixed top-7 left-1/2 transform -translate-x-1/2 isolate flex items-center
+        text-sm bg-bg-secondary/98 rounded-full shadow-[0_1px_2px_0_rgb(42_59_81/0.12),0_0_0_1px_rgba(18,55,105,0.08)] 
+        after:-z-10 after:absolute select-none after:bg-gradient-to-b after:from-[#EDEDF1]/0 after:to-[#EDEDF1] after:opacity-5 after:inset-0 
+        after:pointer-events-none after:rounded-full z-50"
+>
+    <h1 class="text-secondary font-medium cursor-pointer">Víctor Manuel</h1>
+    <ul class="space-x-3 flex w-fit">
+        <li>
+            <a 
+                class="group nav-link inline-flex gap-0.5 hover:font-medium transition-all delay-50 duration-50" 
+                href="#home"
+                data-section="home"
+            >
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#123;</span>
+                <span class="text-secondary">Inicio</span>
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#125;</span>
+            </a>
+        </li>
+        <li>
+            <a 
+                class="group nav-link inline-flex gap-0.5 hover:font-medium transition-all delay-50 duration-50" 
+                href="#projects"
+                data-section="projects"
+            >
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#123;</span>
+                <span class="text-secondary">Proyectos</span>
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#125;</span>
+            </a>
+        </li>
+        <li>
+            <a 
+                class="group nav-link inline-flex gap-0.5 hover:font-medium transition-all delay-50 duration-50" 
+                href="#about_me"
+                data-section="about_me"
+            >
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#123;</span>
+                <span class="text-secondary">Sobre mí</span>
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#125;</span>
+            </a>
+        </li>
+        <li>
+            <a 
+                class="group nav-link inline-flex gap-0.5 hover:font-medium transition-all delay-50 duration-50" 
+                href="#experience"
+                data-section="experience"
+            >
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#123;</span>
+                <span class="text-secondary">Experiencia</span>
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#125;</span>
+            </a>
+        </li>
+        <li>
+            <a 
+                class="group nav-link inline-flex gap-0.5 hover:font-medium transition-all delay-50 duration-50" 
+                href="#services"
+                data-section="services"
+            >
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#123;</span>
+                <span class="text-secondary">Servicios</span>
+                <span class="text-[#B4B8C5] group-hover:text-blue-700 transition-colors delay-50 duration-50">&#125;</span>
+            </a>
+        </li>
+        <li>
+            <a class="relative isolate text-secondary bg-bg-secondary/80 py-2.5 px-3.5 rounded-full 
+                    shadow-[0_1px_2px_rgb(42_59_81/0.12),0_0_0_1px_rgb(18_55_105/0.08)] after:-z-10 after:absolute 
+                    after:bg-gradient-to-b after:from-[#EDEDF1]/0 after:to-[#EDEDF1] after:opacity-10
+                    after:inset-0 after:pointer-events-none after:rounded-full" 
+                href="mailto:manuelluoficial@gmail.com"
+            >
+                Contacto
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- <a 
+    class="nav-link group inline-flex gap-0.5 hover:font-medium transition-all delay-50 duration-50" 
+    href="#inicio"
+    data-section="inicio"
+>
+    <span class="text-[#B4B8C5] group-hover:text-green-700 transition-colors delay-50 duration-50">¿</span>
+    <span class="text-black">Inicio</span>
+    <span class="text-[#B4B8C5] group-hover:text-green-700 transition-colors delay-50 duration-50">?</span>
+</a>
+
+<section id="inicio">
+    ...
+</section> -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link') as NodeListOf<HTMLAnchorElement>;
+    const sections = document.querySelectorAll('section[id]') as NodeListOf<HTMLElement>;
+    
+    const updateActiveLink = (activeSection: string): void => {
+      navLinks.forEach((link: HTMLAnchorElement) => {
+        const spans = link.querySelectorAll('span') as NodeListOf<HTMLSpanElement>;
+        const sectionName = link.getAttribute('data-section');
+        
+        if (sectionName === activeSection) {
+          spans.forEach((span: HTMLSpanElement) => {
+            span.classList.add('font-medium');
+          });
+          spans[0].classList.remove('text-[#B4B8C5]');
+          spans[0].classList.add('text-blue-700');
+          spans[2].classList.remove('text-[#B4B8C5]');
+          spans[2].classList.add('text-blue-700');
+        } else {
+          spans.forEach((span: HTMLSpanElement) => {
+            span.classList.remove('font-medium');
+          });
+          spans[0].classList.remove('text-blue-700');
+          spans[0].classList.add('text-[#B4B8C5]');
+          spans[2].classList.remove('text-blue-700');
+          spans[2].classList.add('text-[#B4B8C5]');
+        }
+      });
+    };
+
+    let isScrollingProgrammatically = false;
+
+    const handleScroll = (): void => {
+      if (isScrollingProgrammatically) return;
+      
+      const headerHeight = 80;
+      const scrollPosition = window.scrollY + headerHeight + 50;
+      let currentSection = '';
+
+      sections.forEach((section: HTMLElement) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSection = section.id;
+        }
+      });
+
+      if (currentSection) {
+        updateActiveLink(currentSection);
+      }
+    };
+
+    const handleNavClick = (event: Event): void => {
+      event.preventDefault();
+      const target = event.currentTarget as HTMLAnchorElement;
+      const sectionId = target.getAttribute('href')?.substring(1);
+      const section = document.getElementById(sectionId || '');
+      
+      if (section) {
+        isScrollingProgrammatically = true;
+        
+        updateActiveLink(sectionId || '');
+        
+        const headerHeight = 80;
+        const sectionTop = section.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: sectionTop,
+          behavior: 'smooth'
+        });
+        
+        setTimeout(() => {
+          isScrollingProgrammatically = false;
+        }, 1000);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    navLinks.forEach((link: HTMLAnchorElement) => {
+      link.addEventListener('click', handleNavClick);
+    });
+
+    handleScroll();
+  });
+</script>

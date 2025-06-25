@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets'
+
+export interface Props {
+    id: string
+    title: string
+    description: string
+    logo: ImageMetadata
+    start_year: number
+    end_year: number
+    preview: boolean
+    link: string
+    technologies: string[]
+    image: ImageMetadata
+    disciplines: string[]
+}
+
+const {id, logo, title, description,  start_year, end_year, technologies, preview, link, image, disciplines} = Astro.props
+
+---
+<li>            
+    <div class="bg-bg-secondary p-4 rounded-3xl border border-border-primary">
+        <div class="flex flex-col lg:flex-row gap-6 lg:min-h-100">
+            <!-- Information -->
+            <div class="lg:basis-2/5 p-2 flex-shrink-0">
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <Image class="mb-3 cursor-pointer" src={logo} alt={id}>
+                            </div>
+                            {id === 'swanest' && 
+                                <span class="text-xs py-1 px-2 rounded-full bg-blue-100 font-medium text-blue-600">
+                                    ¡Proximamente nueva actualización!
+                                </span> 
+                            }    
+                        </div>
+                        <div class="mb-4">
+                            <span class="text-sm text-secondary">
+                                {
+                                start_year === end_year 
+                                    ? start_year 
+                                    : `${start_year} – ${end_year}`
+                                }
+                            </span>
+                            <h3 class="text-2xl -mt-1 tracking-tighter font-medium text-primary">{title}</h3>
+                        </div>
+                        <div>
+                            <p class="text-secondary mb-2 leading-7 text-base">
+                                {description}
+                                {id === 'swanest' 
+                                        && 
+                                    <span class="font-medium">
+                                        ¡Se viene algo increíble!.
+                                    </span> 
+                                }   
+                            </p>
+                            <a class="text-blue-700 w-fit transition-all duration-200 hover:gap-3 font-medium flex gap-2 items-center cursor-pointer" href={link}>
+                                {preview === true 
+                                    ? <span>Previsualizar proyecto</span> 
+                                    : <span>Revisar código</span>
+                                }
+                                <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L4 4L1 7" stroke="#1447E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="mt-9 text-secondary flex flex-wrap-reverse gap-2">
+                        {technologies.map((technology) => (
+                            <li class="px-3 py-1 bg-bg-secondary rounded-full text-sm" style="box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.04);">
+                                {technology}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Preview -->
+            <div class="relative lg:basis-3/5 flex-grow">
+                <div class="bg-[#EDEFF3] w-full h-80 lg:h-full rounded-2xl min-h-84 max-w-277 mx-auto" style="box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.1), 0px 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                    <Image class="object-cover cursor-grab h-full w-full rounded-2xl" src={image} alt={id}></Image>
+                </div>
+                <ul class="absolute top-5 right-5 flex gap-2">
+                    {disciplines.map((discipline) => (
+                        <li class="text-xs cursor-pointer text-white bg-black/50 py-1.5 px-3 rounded-full">{discipline}</li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>

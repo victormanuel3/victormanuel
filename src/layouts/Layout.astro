@@ -1,25 +1,26 @@
 ---
-	import './src/styles/global.css'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import './src/styles/global.css'
 ---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-bg-primary">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>victormanuel</title>
 	</head>
-	<body>
-		<slot />
+	<body class="font-sans md:max-w-7xl lg:mx-auto min-h-screen border-x border-border-primary overflow-x-hidden">
+		<Header/>
+			<main class="relative">
+				<div 
+					class="pointer-events-none bg-gradient-to-b from-[#2E5EF4]/0 via-[#2E5EF4] to-[#2E5EF4]/0 absolute w-80 lg:w-205 lg:blur-[65px] -z-10 h-full left-1/2 transform -translate-x-1/2 blur-2xl opacity-7"
+				></div>
+				<slot />
+			</main>
+		<Footer/>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

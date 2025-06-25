@@ -1,1 +1,84 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: "Geist";
+    src: url("../assets/fonts/Geist-400.woff2") format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Geist";
+    src: url("../assets/fonts/Geist-500.woff2") format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Geist Mono";
+    src: url("../assets/fonts/GeistMono-400.woff2") format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Geist Mono";
+    src: url("../assets/fonts/GeistMono-500.woff2") format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --font-sans: "Geist", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --color-bg-primary: #F8F8F9;
+    --color-bg-secondary: #FDFDFF;
+    --color-bg-tertiary: #313133;
+    --color-border-primary: #D7D9DF;
+    --color-border-secundary: #989EB3;
+    --color-primary: #0C1128;
+    --color-secondary: #484D5C;
+    --color-tertiary: #666D80;
+}
+
+.gradient-border {
+    position: relative;
+}
+        
+.gradient-border::before {
+    content: '';
+    z-index: 50;
+    position: absolute;
+    inset: 0px;
+    border-radius: 999px;
+    padding: 1px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+}
+
+@keyframes kicker-caret {
+  0%, 19% {
+    opacity: 0;
+  }
+  20%, 80% {
+    opacity: 1;
+  }
+  81%, 100% {
+    opacity: 0;
+  }
+}
+
+.kicker-caret {
+  animation: kicker-caret 2s infinite both;
+}
