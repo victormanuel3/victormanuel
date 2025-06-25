@@ -18,7 +18,7 @@ export const projects = [
         technologies: [
             "GSAP", "TypeScript", "Symfony", "Angular", "Figma", "Tailwind"
         ],
-        link: "",
+        link: "https://github.com/EricB-59/Swanest",
         preview: false,
         image: swanest,
         disciplines: [
@@ -35,7 +35,7 @@ export const projects = [
         technologies: [
             "HTML", "CSS", "JavaScript"
         ],
-        link: "",
+        link: "https://classicgames-sigma.vercel.app/",
         preview: true,
         image: classicgames,
         disciplines: [
@@ -52,7 +52,7 @@ export const projects = [
         technologies: [
             "HTML", "CSS", "JavaScript"
         ],
-        link: "",
+        link: "https://hotwheels-kappa.vercel.app/",
         preview: true,
         image: hotwheels,
         disciplines: [
