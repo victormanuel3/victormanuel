@@ -132,20 +132,18 @@ const canvasId = `pixel-canvas-${Math.random().toString(36).substr(2, 9)}`;
   const initAnimatedPixels = () => {
     if (!animationEnabled) return;
     
-    // Usar aproximadamente 50% de los píxeles para animación (como en el ejemplo)
     const animationCount = Math.floor(coordinates.length * 0.5);
     const shuffled = [...coordinates].sort(() => Math.random() - 0.5);
     
     animatedPixels = shuffled.slice(0, animationCount).map(([x, y]) => ({
       x,
       y,
-      // Duraciones más cortas y rangos similares al ejemplo
-      duration: 1000 + Math.random() * 2000, // 1-3 segundos
-      delay: Math.random() * 4000, // 0-4 segundos delay inicial
+      duration: 1000 + Math.random() * 2000,
+      delay: Math.random() * 4000,
       phase: Math.random() * Math.PI * 2,
       cycleStart: 0,
-      isPaused: Math.random() > 0.5, // Empezar aleatoriamente pausado o no
-      pauseDuration: 1000 + Math.random() * 3000 // Duración de pausa variable
+      isPaused: Math.random() > 0.5,
+      pauseDuration: 1000 + Math.random() * 3000 
     }));
   };
   
@@ -167,24 +165,20 @@ const canvasId = `pixel-canvas-${Math.random().toString(36).substr(2, 9)}`;
             const elapsed = currentTime - pixel.cycleStart;
             
             if (pixel.isPaused) {
-              // Durante la pausa, mantener opacidad reducida pero no tan baja
               if (elapsed >= pixel.pauseDuration) {
                 pixel.isPaused = false;
                 pixel.cycleStart = currentTime;
               }
-              opacity = 0.8; // Opacidad durante pausa, más alta que antes
+              opacity = 0.8;
             } else {
-              // Durante la animación activa
               if (elapsed >= pixel.duration) {
                 pixel.isPaused = true;
                 pixel.cycleStart = currentTime;
-                pixel.pauseDuration = 1000 + Math.random() * 3000; // Nueva duración de pausa
+                pixel.pauseDuration = 1000 + Math.random() * 3000;
                 opacity = 0.8;
               } else {
-                // Animación sinusoidal más suave
                 const progress = elapsed / pixel.duration;
                 const sineValue = 0.55 + 0.25 * Math.sin((progress + pixel.phase) * Math.PI * 2);
-                // Rango de opacidad más amplio: 0.3 a 1.0
                 opacity = Math.max(0.3, Math.min(1.0, sineValue));
               }
             }
@@ -200,7 +194,6 @@ const canvasId = `pixel-canvas-${Math.random().toString(36).substr(2, 9)}`;
   };
   
   const animate = (currentTime) => {
-    // Limitar a ~30 FPS para mejor performance
     if (currentTime - lastTime < 33.33) {
       animationId = requestAnimationFrame(animate);
       return;
@@ -233,7 +226,6 @@ const canvasId = `pixel-canvas-${Math.random().toString(36).substr(2, 9)}`;
     }
   };
   
-  // Manejo de visibilidad para pausar/reanudar animación
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       cleanup();

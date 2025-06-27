@@ -121,7 +121,6 @@ const { id } = Astro.props;
       this.modal.classList.add('flex');
       document.body.style.overflow = 'hidden';
       
-      // Focus trap
       const focusableElements = this.modal.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
